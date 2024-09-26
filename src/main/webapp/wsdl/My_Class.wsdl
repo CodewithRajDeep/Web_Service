@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://my_package.com" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://my_package.com" xmlns:intf="http://my_package.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://my_package.com" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getTitle">
+    <complexType/>
+   </element>
+   <element name="getTitleResponse">
+    <complexType>
+     <sequence>
+      <element name="getTitleReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getPlace">
+    <complexType/>
+   </element>
+   <element name="getPlaceResponse">
+    <complexType>
+     <sequence>
+      <element name="getPlaceReturn" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="getTitleResponse">
+
+      <wsdl:part element="impl:getTitleResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getTitleRequest">
+
+      <wsdl:part element="impl:getTitle" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPlaceRequest">
+
+      <wsdl:part element="impl:getPlace" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getPlaceResponse">
+
+      <wsdl:part element="impl:getPlaceResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="My_Class">
+
+      <wsdl:operation name="getTitle">
+
+         <wsdl:input message="impl:getTitleRequest" name="getTitleRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getTitleResponse" name="getTitleResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPlace">
+
+         <wsdl:input message="impl:getPlaceRequest" name="getPlaceRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getPlaceResponse" name="getPlaceResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="My_ClassSoapBinding" type="impl:My_Class">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getTitle">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getTitleRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getTitleResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getPlace">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getPlaceRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getPlaceResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="My_ClassService">
+
+      <wsdl:port binding="impl:My_ClassSoapBinding" name="My_Class">
+
+         <wsdlsoap:address location="http://localhost:8080/web_service_demo/services/My_Class"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

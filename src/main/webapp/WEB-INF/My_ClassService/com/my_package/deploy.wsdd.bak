@@ -1,0 +1,30 @@
+<!-- Use this file to deploy some handlers/chains and services      -->
+<!-- Two ways to do this:                                           -->
+<!--   java org.apache.axis.client.AdminClient deploy.wsdd          -->
+<!--      after the axis server is running                          -->
+<!-- or                                                             -->
+<!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   -->
+<!--      from the same directory that the Axis engine runs         -->
+
+<deployment
+    xmlns="http://xml.apache.org/axis/wsdd/"
+    xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from My_ClassService WSDL service -->
+
+  <service name="My_Class" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://my_package.com"/>
+      <parameter name="wsdlServiceElement" value="My_ClassService"/>
+      <parameter name="schemaQualified" value="http://my_package.com"/>
+      <parameter name="wsdlServicePort" value="My_Class"/>
+      <parameter name="className" value="com.my_package.My_ClassSoapBindingImpl"/>
+      <parameter name="wsdlPortType" value="My_Class"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation name="getTitle" qname="operNS:getTitle" xmlns:operNS="http://my_package.com" returnQName="retNS:getTitleReturn" xmlns:retNS="http://my_package.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <operation name="getPlace" qname="operNS:getPlace" xmlns:operNS="http://my_package.com" returnQName="retNS:getPlaceReturn" xmlns:retNS="http://my_package.com" returnType="rtns:string" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+      </operation>
+      <parameter name="allowedMethods" value="getTitle getPlace"/>
+
+  </service>
+</deployment>
