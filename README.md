@@ -21,3 +21,4 @@ Description Language (WSDL) 1.1.
 
 ## Demonstration:
 <img src="https://static1.smartbear.co/soapui/media/images/stories/soapwsdl/wsdl-service-wsdl-content-tab.png" width="256"/>
+<img src="https://codeahoy.com/img/books/soap/wsdl-2-building-blocks.png" width="256"/>
