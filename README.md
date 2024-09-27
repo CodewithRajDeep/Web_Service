@@ -20,4 +20,4 @@ Description Language (WSDL) 1.1.
 ```
 
 ## Demonstration:
-<img src="https://www.researchgate.net/profile/Alejandro-Metke-Jimenez/publication/282330205/figure/fig1/AS:614156868788230@1523437816369/An-example-WSDL-file.png" width="256"/>
+<img src="https://static1.smartbear.co/soapui/media/images/stories/soapwsdl/wsdl-service-wsdl-content-tab.png" width="256"/>
